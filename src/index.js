@@ -4,7 +4,7 @@ const { Client, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('../config.json');
 
 // create new client instance
-const client = new Client({ intents: [GatweayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // log when client is ready
 client.once(Events.ClientReady, c => {
