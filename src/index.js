@@ -7,10 +7,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
+// console.log(`---${foldersPath}`);
 const commandFolders = fs.readdirSync(foldersPath);
+// console.log(`---${commandFolders}`);
+
 
 for (const folder of commandFolders) {
     const commandsPath = path.join(foldersPath, folder);
+    // console.log(`---${commandsPath}`);
     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file);
